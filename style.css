@@ -1,0 +1,53 @@
+* {
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+}
+.image-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    grid-gap: 2rem;
+    min-height: 100vh;
+}
+.image{
+    overflow: hidden;
+}
+.image img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: all 0.3s ease-out;
+    cursor: pointer;
+}
+
+.image img:hover{
+    transform: scale(1.2);
+}
+
+.modal-img {
+    background-color: rgba(0, 0, 0, 0.7);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    opacity: 0;
+    pointer-events: none;
+    transition: 0.25s ease-out;
+}
+
+.modal-img.open{
+    opacity: 1;
+    pointer-events: all;
+}
+
+.modal-img .full-img{
+    width: 60%;
+    transform: scale(0.5);
+    transition: all 0.25s ease-out;
+}
+
+.full-img.open {
+    transform: scale(1);
+}
